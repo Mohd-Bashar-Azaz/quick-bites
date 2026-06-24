@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 18 100% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 63%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 42%;
+    --accent: 18 100% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 18 100% 58%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-neutral-950 text-white font-inter antialiased;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-glass-bg border border-glass-border rounded-2xl backdrop-blur-xl;
+  }
+  .glass-card-hover:hover {
+    @apply border-glass-border-hover bg-[rgba(255,255,255,0.09)] shadow-glass-hover;
+  }
+  .food-gradient {
+    background: linear-gradient(135deg, #FF6B35, #FF3B3B);
+  }
+  .purple-gradient {
+    background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  }
+  .blue-gradient {
+    background: linear-gradient(135deg, #3B82F6, #06B6D4);
+  }
+  .green-gradient {
+    background: linear-gradient(135deg, #10B981, #059669);
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #FF6B35, #FF3B3B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .shimmer {
+    background: linear-gradient(90deg, #1A1A1A 25%, #2A2A2A 50%, #1A1A1A 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite ease-in-out;
+  }
+  .text-shadow-token {
+    text-shadow: 0 0 40px rgba(255, 107, 53, 0.5), 0 0 80px rgba(255, 107, 53, 0.2);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
